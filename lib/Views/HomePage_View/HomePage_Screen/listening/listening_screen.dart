@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../Widgets/CustomAppbar.dart';
-import '../../../Widgets/buildFooter.dart';
+import '../../../../Widgets/CustomAppbar.dart';
+import '../../../../Widgets/buildFooter.dart';
 
 class ListeningScreen extends StatelessWidget {
    ListeningScreen({super.key});

@@ -1,18 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../Widgets/CustomAppbar.dart';
-import '../../../Widgets/buildFooter.dart';
 
-class GamingScreen extends StatelessWidget {
-   GamingScreen({super.key});
-   GlobalKey<ScaffoldState> ScaffoldKey = GlobalKey();
+import '../../../../Widgets/CustomAppbar.dart';
+import '../../../../Widgets/buildFooter.dart';
+
+class SpeakingScreen extends StatelessWidget {
+   SpeakingScreen({super.key});
+  GlobalKey<ScaffoldState> ScaffoldKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
-      appBar: CustomAppbar(ScaffoldKey: ScaffoldKey,keytool: 90, title: '', text: "Let's game together", isappear: false,),
-      backgroundColor:Color.fromARGB(255, 254, 250, 229) ,
-      bottomNavigationBar: BuildFotter(),
+      appBar: CustomAppbar(ScaffoldKey: ScaffoldKey,keytool: 90, title: '', text: "Let's speak together", isappear: false,),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.grey[300],
         child: Container(
@@ -26,6 +24,8 @@ class GamingScreen extends StatelessWidget {
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      backgroundColor:Color.fromARGB(255, 254, 250, 229) ,
+      bottomNavigationBar: BuildFotter(),
     );
   }
 }

@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../Widgets/BottomSheet.dart';
-import '../../../Widgets/CustomAppbar.dart';
-import '../../../Widgets/CustomItem.dart';
-import '../../../Widgets/buildFooter.dart';
-import '../HomePage_Controller/vocabulary_controller.dart';
+import '../../../../Core/Constances/all_colors.dart';
+import '../../../../Widgets/BottomSheet.dart';
+import '../../../../Widgets/CustomAppbar.dart';
+import '../../../../Widgets/CustomItem.dart';
+import '../../../../Widgets/buildFooter.dart';
+import '../../HomePage_Controller/vocabulary_controller/vocabulary_controller.dart';
 
 class VocabularyScreen extends GetView<VocabularyController> {
   VocabularyScreen({super.key});
@@ -30,7 +31,7 @@ class VocabularyScreen extends GetView<VocabularyController> {
         onPressed: () => AddVocabularySheet().show(context),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      backgroundColor: Color.fromARGB(255, 254, 250, 229),
+      backgroundColor: background,
       bottomNavigationBar: BuildFotter(),
       body:Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),

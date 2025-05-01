@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../Views/HomePage_View/HomePage_Controller/vocabulary_controller.dart';
+import '../Views/HomePage_View/HomePage_Controller/vocabulary_controller/vocabulary_controller.dart';
 
 class AddVocabularySheet {
   final TextEditingController nameController = TextEditingController();

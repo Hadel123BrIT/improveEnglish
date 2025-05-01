@@ -1,16 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../../Widgets/CustomAppbar.dart';
+import '../../../../Widgets/buildFooter.dart';
 
-import '../../../Widgets/CustomAppbar.dart';
-import '../../../Widgets/buildFooter.dart';
-
-class ReadingScreen extends StatelessWidget {
-   ReadingScreen({super.key});
-  GlobalKey<ScaffoldState> ScaffoldKey = GlobalKey();
+class GamingScreen extends StatelessWidget {
+   GamingScreen({super.key});
+   GlobalKey<ScaffoldState> ScaffoldKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
-      appBar: CustomAppbar(ScaffoldKey: ScaffoldKey,keytool: 90, title: '', text: "Let's read together", isappear: false,),
+      appBar: CustomAppbar(ScaffoldKey: ScaffoldKey,keytool: 90, title: '', text: "Let's game together", isappear: false,),
+      backgroundColor:Color.fromARGB(255, 254, 250, 229) ,
+      bottomNavigationBar: BuildFotter(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.grey[300],
         child: Container(
@@ -24,8 +26,6 @@ class ReadingScreen extends StatelessWidget {
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      backgroundColor:Color.fromARGB(255, 254, 250, 229) ,
-      bottomNavigationBar: BuildFotter(),
     );
   }
 }

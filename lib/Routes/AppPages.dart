@@ -1,10 +1,10 @@
-import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/gaming_screen.dart';
+import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/gaming/gaming_screen.dart';
 import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/homePage_screen.dart';
-import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/listening_screen.dart';
-import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/reading_screen.dart';
-import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/speaking_screen.dart';
-import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/vocabulary_screen.dart';
-import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/writing_screen.dart';
+import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/listening/listening_screen.dart';
+import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/reading/reading_screen.dart';
+import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/speaking/speaking_screen.dart';
+import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/vocabulary/vocabulary_screen.dart';
+import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/writing/writing_screen.dart';
 import 'package:app_with_firebase/Views/Login_View/login_screen/login_screen.dart';
 import 'package:app_with_firebase/Views/Register_View/register_screen/register_screen.dart';
 import 'package:get/get.dart';
