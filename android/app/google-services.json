@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1071539468904",
+    "project_id": "learningenglishapp-d7f2d",
+    "storage_bucket": "learningenglishapp-d7f2d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071539468904:android:d55df22cfe6f61a8ced9dd",
+        "android_client_info": {
+          "package_name": "com.example.app_with_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCz8cE34OBMGUGOjY986vEbrQ7jsJJA-gM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071539468904:android:1cd85e7cd1ade18bced9dd",
+        "android_client_info": {
+          "package_name": "com.example.coffeein"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCz8cE34OBMGUGOjY986vEbrQ7jsJJA-gM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
