@@ -25,7 +25,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   PageController splashController=PageController();
   bool onlastPage=false;
   @override

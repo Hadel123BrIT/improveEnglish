@@ -1,17 +1,18 @@
-import 'package:app_with_firebase/Views/HomePage_View/HomePage_Controller/writing_controller.dart';
+import 'package:app_with_firebase/Views/HomePage_View/HomePage_Controller/writing_controller/writing_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../Widgets/BottomSheet.dart';
-import '../../../Widgets/CustomAppbar.dart';
-import '../../../Widgets/CustomItem.dart';
-import '../../../Widgets/buildFooter.dart';
-import '../HomePage_Controller/vocabulary_controller.dart';
+import '../../../../Widgets/BottomSheet.dart';
+import '../../../../Widgets/CustomAppbar.dart';
+import '../../../../Widgets/CustomItem.dart';
+import '../../../../Widgets/buildFooter.dart';
+import '../../HomePage_Controller/vocabulary_controller/vocabulary_controller.dart';
 
 class WritingScreen extends GetView<WritingController> {
   WritingScreen({super.key});
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+
   // final WritingController _controller = Get.put(WritingController());
   @override
   Widget build(BuildContext context) {

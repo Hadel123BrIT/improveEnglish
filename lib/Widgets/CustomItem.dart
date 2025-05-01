@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../Routes/AppRoutes.dart';
-import '../Views/HomePage_View/HomePage_Controller/vocabulary_controller.dart';
-import '../Views/HomePage_View/HomePage_Screen/gaming_screen.dart';
-import '../Views/HomePage_View/HomePage_Screen/listening_screen.dart';
-import '../Views/HomePage_View/HomePage_Screen/reading_screen.dart';
-import '../Views/HomePage_View/HomePage_Screen/speaking_screen.dart';
-import '../Views/HomePage_View/HomePage_Screen/vocabulary_screen.dart';
-import '../Views/HomePage_View/HomePage_Screen/writing_screen.dart';
+import '../Views/HomePage_View/HomePage_Controller/vocabulary_controller/vocabulary_controller.dart';
+import '../Views/HomePage_View/HomePage_Screen/gaming/gaming_screen.dart';
+import '../Views/HomePage_View/HomePage_Screen/listening/listening_screen.dart';
+import '../Views/HomePage_View/HomePage_Screen/reading/reading_screen.dart';
+import '../Views/HomePage_View/HomePage_Screen/speaking/speaking_screen.dart';
+import '../Views/HomePage_View/HomePage_Screen/vocabulary/vocabulary_details.dart';
+import '../Views/HomePage_View/HomePage_Screen/vocabulary/vocabulary_screen.dart';
+import '../Views/HomePage_View/HomePage_Screen/writing/writing_screen.dart';
 import 'AwesomeDialog.dart';
 
 class CustomItem extends StatelessWidget {
@@ -48,7 +49,7 @@ class CustomItem extends StatelessWidget {
          Get.to(() => SpeakingScreen(),arguments: title);
          break;
        default:
-         Get.snackbar('Error', 'Screen not found, just you can update or delete');
+         Get.to(() => VocabularyDetails(folderId: folderId!));
      }
    }
   @override

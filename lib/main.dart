@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'Routes/AppPages.dart';
 import 'Views/Splash_View/Splash_Screen/splash_screen.dart';
  import 'firebase_options.dart';
 void main() async {
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home:SplashScreen()
+      home:SplashScreen(),
+
       //home: HomepageScreen(),
     );
   }

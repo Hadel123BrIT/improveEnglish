@@ -9,4 +9,5 @@ abstract class AppRoutes {
   static const write = "/writing_screen";
   static const read = "/reading_screen";
   static const vocabulary = "/Vocabulary_screen";
+  static const root = "/RootScreen";
 }

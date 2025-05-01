@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
+import '../Views/HomePage_View/HomePage_Screen/gaming/gaming_screen.dart';
+import '../Views/HomePage_View/HomePage_Screen/homePage_screen.dart';
+import '../Views/MyProfile_View/MyProfile_Screen/myProfile_screen.dart';
+import '../Views/Setting_View/Setting_Screen/setting_screen.dart';
 import 'BottomBar.dart';
 
 class BuildFotter extends GetView<RootController>{
@@ -22,12 +26,12 @@ class BuildFotter extends GetView<RootController>{
        return BottombarItem(
          isActive: isActive,
          icon: Icon(
-           controller.tabs[index],
+           controller.tabs[index] as IconData?,
            color: isActive ? Colors.grey: Colors.grey,
          ),
        );
-     },
-     activeIndex: controller.tabIndex.value,
+     }, activeIndex: -1,
+
    );
   }
 

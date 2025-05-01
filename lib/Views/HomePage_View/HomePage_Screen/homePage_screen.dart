@@ -10,10 +10,14 @@ import '../../../Widgets/Customslivergrid.dart';
 import '../../../Widgets/LogoWithAppbar.dart';
 import '../../../Widgets/buildFooter.dart';
 import '../../../Widgets/logo.dart';
+import '../../MyProfile_View/MyProfile_Screen/myProfile_screen.dart';
 import '../../Register_View/register_controller/register_controller.dart';
 import '../../Root_View/Root_controller/root_controller.dart';
+import '../../Setting_View/Setting_Screen/setting_screen.dart';
+import 'gaming/gaming_screen.dart';
 
 class HomepageScreen extends GetView<RootController> {
+
    HomepageScreen({super.key});
 
   @override
@@ -40,7 +44,7 @@ class HomepageScreen extends GetView<RootController> {
       key: ScaffoldKey,
       drawer:CustomDrawer() ,
       appBar: CustomAppbar( ScaffoldKey: ScaffoldKey, title: '   Hadel', text: 'Welcome', isappear: true,),
-      bottomNavigationBar: BuildFotter(),
+       bottomNavigationBar: BuildFotter(),
     body: Padding(
     padding: const EdgeInsets.all(25.0),
     child: CustomScrollView(

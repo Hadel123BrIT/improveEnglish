@@ -7,36 +7,40 @@ class Page2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 254, 250, 229),
-     body:  Center(
+      backgroundColor: const Color.fromARGB(255, 254, 250, 229),
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("And",
+            const Text(
+              "And",
               style: TextStyle(
-                fontSize: mediaQuery.size.width * 0.07,
+                fontSize: 28,
                 fontWeight: FontWeight.bold,
               ),
+            ),
+            const SizedBox(height: 35),
+            Text(
+              "You need to storage your information?",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey[700],
+              ),
+              textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: 35,
-            ),
-            Text("You need to storage your information?",
-              style: TextStyle(
-                fontSize: mediaQuery.size.width * 0.06,
-                fontWeight: FontWeight.bold,
-                color: Colors.grey[700]
+              width: screenWidth * 0.85,
+              child: Lottie.asset(
+                'assets/animations/page2.json',
+                fit: BoxFit.contain,
+                repeat: true,
               ),
             ),
-            Lottie.asset(
-              'assets/animations/page2.json',
-              fit: BoxFit.cover,
-              repeat: true,
-            ),
-
           ],
         ),
       ),

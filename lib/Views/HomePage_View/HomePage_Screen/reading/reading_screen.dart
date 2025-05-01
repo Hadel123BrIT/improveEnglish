@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../../Widgets/CustomAppbar.dart';
-import '../../../Widgets/buildFooter.dart';
+import '../../../../Widgets/CustomAppbar.dart';
+import '../../../../Widgets/buildFooter.dart';
 
 class ReadingScreen extends StatelessWidget {
    ReadingScreen({super.key});
+   final currentTabIndex = 0.obs;
   GlobalKey<ScaffoldState> ScaffoldKey = GlobalKey();
   @override
   Widget build(BuildContext context) {

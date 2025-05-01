@@ -8,7 +8,7 @@ class RootController extends GetxController {
   void onRender() {
     tabs = [
       Icons.home,
-      Icons.gamepad_outlined,
+      Icons.games,
       Icons.person,
       Icons.settings
     ];
