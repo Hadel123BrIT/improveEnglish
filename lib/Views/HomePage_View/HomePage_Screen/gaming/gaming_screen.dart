@@ -10,6 +10,7 @@ class GamingScreen extends StatelessWidget {
    final currentTabIndex = 0.obs;
   @override
   Widget build(BuildContext context) {
+    print("yes");
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       appBar: CustomAppbar(ScaffoldKey: ScaffoldKey,keytool: 90, title: '', text: "Let's game together", isappear: false,),
