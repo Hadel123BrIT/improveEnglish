@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
+import '../../HomePage_Screen/vocabulary/vocabulary_screen.dart';
+
 class VocabularyController extends GetxController {
   final folders = <Map<String, dynamic>>[].obs;
   final CollectionReference foldersCollection =
@@ -45,6 +47,24 @@ class VocabularyController extends GetxController {
     }
   }
 
+  // Future<void> addFolder(String name) async {
+  //   try {
+  //     final user = _auth.currentUser;
+  //     if (user == null) {
+  //       Get.snackbar('Error', 'User not authenticated');
+  //       return;
+  //     }
+  //
+  //     await foldersCollection.add({
+  //       'name': name,
+  //       'userId': user.uid,
+  //       'created_at': FieldValue.serverTimestamp(),
+  //     });
+  //     await getFolders();
+  //   } catch (e) {
+  //     Get.snackbar('Error', 'Failed to add folder: ${e.toString()}');
+  //   }
+  // }
   Future<void> addFolder(String name) async {
     try {
       final user = _auth.currentUser;
@@ -58,7 +78,15 @@ class VocabularyController extends GetxController {
         'userId': user.uid,
         'created_at': FieldValue.serverTimestamp(),
       });
+
       await getFolders();
+
+      // إظهار الإشعار بعد الإضافة الناجحة
+      await NotificationHelper.showNotification(
+        'تمت الإضافة',
+        'تم إضافة المجلد: $name',
+      );
+
     } catch (e) {
       Get.snackbar('Error', 'Failed to add folder: ${e.toString()}');
     }

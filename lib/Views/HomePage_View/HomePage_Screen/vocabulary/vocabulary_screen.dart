@@ -118,7 +118,7 @@ class NotificationHelper {
 
   static Future<void> initialize() async {
     const AndroidInitializationSettings initializationSettingsAndroid =
-    AndroidInitializationSettings('@mipmap/dictionary.png');
+    AndroidInitializationSettings('@mipmap/ic_launcher');
 
     final InitializationSettings initializationSettings =
     InitializationSettings(android: initializationSettingsAndroid);
