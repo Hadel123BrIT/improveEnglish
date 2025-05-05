@@ -38,12 +38,13 @@ class VocabularyDetails extends StatelessWidget {
         title: Obx(() => Text(controller.folderName.value)),
       ),
 
-      // floatingActionButton: FloatingActionButton(
-      //   backgroundColor: Colors.grey[300],
-      //   child: Icon(Icons.add_box_outlined, color: Colors.black),
-      //   onPressed: () => _showAddWordDialog(context),
-      // ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.grey[300],
+        child: Icon(Icons.add_box_outlined, color: Colors.black),
+        onPressed: () => _showAddWordDialog(context),
+      ),
+      bottomNavigationBar: const CustomBottomNavigationBar(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Column(
         children: [
           Getsearch(),

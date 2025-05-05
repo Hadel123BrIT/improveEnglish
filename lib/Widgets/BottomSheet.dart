@@ -11,6 +11,7 @@ class AddVocabularySheet {
 
   show(BuildContext context) {
     showModalBottomSheet(
+      isScrollControlled: true,
       context: context,
       builder: (context) {
         return Padding(
@@ -24,6 +25,7 @@ class AddVocabularySheet {
                   labelText: 'Folder Name',
                   border: OutlineInputBorder(),
                 ),
+                autofocus: true,
               ),
               SizedBox(height: 20),
               ElevatedButton(

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
+import '../../../../notification_helper.dart';
 import '../../HomePage_Screen/vocabulary/vocabulary_screen.dart';
 
 class VocabularyController extends GetxController {
@@ -96,7 +97,7 @@ class VocabularyController extends GetxController {
     try {
       final user = FirebaseAuth.instance.currentUser;
       if (user == null) {
-        Get.snackbar('خطأ', 'يجب تسجيل الدخول أولاً');
+        Get.snackbar('Error', 'You must log in first.');
         return;
       }
       await FirebaseFirestore.instance
@@ -109,12 +110,12 @@ class VocabularyController extends GetxController {
       controller.folders.removeWhere((folder) => folder['id'] == folderId);
       controller.folders.refresh();
 
-      Get.snackbar('نجاح', 'تم حذف المجلد بنجاح');
+      Get.snackbar('sucessfuly', 'The folder has been deleted successfully');
 
     } on FirebaseException catch (e) {
       Get.snackbar('خطأ في القاعدة', e.message ?? 'حدث خطأ غير معروف');
     } catch (e) {
-      Get.snackbar('خطأ', 'حدث خطأ أثناء الحذف');
+      Get.snackbar('Error', 'An error occurred while deleting');
     }
   }
 
@@ -122,13 +123,13 @@ class VocabularyController extends GetxController {
     try {
       final user = FirebaseAuth.instance.currentUser;
       if (user == null) {
-        Get.snackbar('خطأ', 'يجب تسجيل الدخول أولاً');
+        Get.snackbar('Error', 'You must log in first.');
         return;
       }
 
       final trimmedName = newName.trim();
       if (trimmedName.isEmpty) {
-        Get.snackbar('خطأ', 'اسم المجلد لا يمكن أن يكون فارغاً');
+        Get.snackbar('Error', 'Folder name cannot be empty');
         return;
       }
 
@@ -150,12 +151,12 @@ class VocabularyController extends GetxController {
         controller.folders.refresh();
       }
 
-      Get.snackbar('نجاح', 'تم تحديث المجلد بنجاح');
+      Get.snackbar('Success', 'Folder updated successfully');
 
     } on FirebaseException catch (e) {
       Get.snackbar('خطأ في القاعدة', e.message ?? 'حدث خطأ غير معروف');
     } catch (e) {
-      Get.snackbar('خطأ', 'حدث خطأ أثناء التحديث');
+      Get.snackbar('Error', 'An error occurred during the update');
     }
   }
 }

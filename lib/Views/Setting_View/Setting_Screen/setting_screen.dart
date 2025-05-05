@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:toggle_switch/toggle_switch.dart';
-
 import '../../../Core/Constances/all_colors.dart';
 import '../../../Widgets/buildFoot/buildFoot_Controller.dart';
 import '../../../Widgets/buildFoot/buildFooter.dart';
@@ -166,8 +165,8 @@ class SettingScreen extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           Get.snackbar(
-            'تم الحفظ',
-            'تم حفظ الإعدادات بنجاح',
+            'save is done',
+            'Settings have been saved successfully',
             snackPosition: SnackPosition.BOTTOM,
             backgroundColor: Colors.orangeAccent[100],
             colorText: Colors.white,
@@ -175,7 +174,7 @@ class SettingScreen extends StatelessWidget {
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 12),
-          child: Text('حفظ الإعدادات'),
+          child: Text('save'),
         ),
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(

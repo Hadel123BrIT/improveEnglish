@@ -1,46 +1,38 @@
-// import  'package:flutter_local_notifications/flutter_local_notifications.dart';
-// import 'package:timezone/timezone.dart' as tz;
-// import 'package:timezone/data/latest_all.dart' as tz;
-//
-//
-// class NotificationHelper{
-//    static final _notification = FlutterLocalNotificationsPlugin();
-//    static init() async{
-//      await _notification.initialize(
-//        const InitializationSettings(
-//          android: AndroidInitializationSettings("@mipmap/home.svg"),
-//        ),
-//      );
-//      tz.initializeTimeZones();
-//    }
-//    static scheduleNotification(
-//        String title,
-//        String body,
-//        int userDayInput,
-//        ) async {
-//      var androidDetails = const AndroidNotificationDetails(
-//        "important_notification",
-//        "My Channel",
-//        importance: Importance.max,
-//        priority: Priority.high,
-//      );
-//      var notificationDetails = NotificationDetails(android: androidDetails);
-//      await _notification.zonedSchedule(
-//        0,
-//        title,
-//        body,
-//        tz.TZDateTime.now(tz.local).add(Duration(
-//          seconds: userDayInput,
-//        )
-//
-//        ),
-//        notificationDetails,
-//        uiLocalNotificationDateInterpretation:
-//        UILocalNotificationDateInterpretation.absoluteTime,
-//        androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-//      );
-//    }
-//
-//    cancelAllNotifications() {
-//      _notification.cancelAll();
-// }
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:timezone/timezone.dart' as tz;
+import 'package:timezone/data/latest_all.dart' as tz;
+class NotificationHelper {
+  static final FlutterLocalNotificationsPlugin _notifications = FlutterLocalNotificationsPlugin();
+
+  static Future<void> initialize() async {
+    const AndroidInitializationSettings initializationSettingsAndroid =
+    AndroidInitializationSettings('@mipmap/dictionary');
+
+    final InitializationSettings initializationSettings =
+    InitializationSettings(android: initializationSettingsAndroid);
+
+    await _notifications.initialize(initializationSettings);
+    tz.initializeTimeZones();
+  }
+
+  static Future<void> showNotification(String title, String body) async {
+    const AndroidNotificationDetails androidPlatformChannelSpecifics =
+    AndroidNotificationDetails(
+      'vocabulary_channel',
+      'Vocabulary Notifications',
+      importance: Importance.max,
+      priority: Priority.high,
+      showWhen: false,
+    );
+
+    const NotificationDetails platformChannelSpecifics =
+    NotificationDetails(android: androidPlatformChannelSpecifics);
+
+    await _notifications.show(
+      0,
+      title,
+      body,
+      platformChannelSpecifics,
+    );
+  }
+}

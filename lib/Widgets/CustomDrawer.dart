@@ -1,5 +1,7 @@
 import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/homePage_screen.dart';
 import 'package:app_with_firebase/Views/Login_View/login_screen/login_screen.dart';
+import 'package:app_with_firebase/Views/MyProfile_View/MyProfile_Screen/myProfile_screen.dart';
+import 'package:app_with_firebase/Views/Setting_View/Setting_Screen/setting_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -22,9 +24,13 @@ class _CustomDrawerState extends State<CustomDrawer> with SingleTickerProviderSt
     DrawItemModel(text: 'HOMEPAGE', icon: Icons.home, function: (){
       Get.to(()=>HomepageScreen());
     }, ),
-    DrawItemModel(text: 'SETTING', icon: Icons.settings,function: (){}),
-    DrawItemModel(text: 'NOTLFICATIONS', icon: Icons.notifications_active_sharp,function: (){}),
-    DrawItemModel(text: 'MYPROFILE', icon: Icons.person,function: (){}),
+    DrawItemModel(text: 'SETTING', icon: Icons.settings,function: (){
+      Get.to(SettingScreen());
+    }),
+    // DrawItemModel(text: 'NOTLFICATIONS', icon: Icons.notifications_active_sharp,function: (){}),
+    DrawItemModel(text: 'MYPROFILE', icon: Icons.person,function: (){
+      Get.to(MyProfileScreen());
+    }),
     DrawItemModel(text: 'LOGOUT', icon: Icons.logout,function: ()async{
   try {
   print("Attempting to logout...");

@@ -10,6 +10,7 @@ import 'Routes/AppPages.dart';
 import 'Routes/AppRoutes.dart';
 import 'Views/HomePage_View/HomePage_Screen/vocabulary/vocabulary_screen.dart';
 import 'firebase_options.dart';
+import 'notification_helper.dart';
 
 void main() async {
   // 1. تهيئة الربط الأساسي لـ Flutter (يجب أن تكون أول شيء)
@@ -31,10 +32,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      //initialRoute: AppRoutes.splash,
       getPages: AppPages.pages,
      home: SplashScreen(),
-     // home: HomepageScreen(),
     );
   }
 }

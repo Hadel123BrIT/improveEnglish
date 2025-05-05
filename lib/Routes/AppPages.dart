@@ -7,7 +7,6 @@ import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/vocabulary
 import 'package:app_with_firebase/Views/HomePage_View/HomePage_Screen/writing/writing_screen.dart';
 import 'package:app_with_firebase/Views/Login_View/login_screen/login_screen.dart';
 import 'package:app_with_firebase/Views/Register_View/register_screen/register_screen.dart';
-import 'package:app_with_firebase/Views/Root_View/Root_Screen/root_screen.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
