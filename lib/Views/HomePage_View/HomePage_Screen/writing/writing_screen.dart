@@ -6,13 +6,13 @@ import 'package:lottie/lottie.dart';
 import '../../../../Widgets/BottomSheet.dart';
 import '../../../../Widgets/CustomAppbar.dart';
 import '../../../../Widgets/CustomItem.dart';
-import '../../../../Widgets/buildFooter.dart';
+import '../../../../Widgets/buildFoot/buildFoot_Controller.dart';
+import '../../../../Widgets/buildFoot/buildFooter.dart';
 import '../../HomePage_Controller/vocabulary_controller/vocabulary_controller.dart';
 
 class WritingScreen extends GetView<WritingController> {
   WritingScreen({super.key});
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
-
   // final WritingController _controller = Get.put(WritingController());
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class WritingScreen extends GetView<WritingController> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       backgroundColor: Color.fromARGB(255, 254, 250, 229),
-      bottomNavigationBar: BuildFotter(),
+      bottomNavigationBar: const CustomBottomNavigationBar(),
       body:Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Column(

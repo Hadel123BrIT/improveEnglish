@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../Widgets/CustomAppbar.dart';
-import '../../../../Widgets/buildFooter.dart';
+import '../../../../Widgets/buildFoot/buildFoot_Controller.dart';
+import '../../../../Widgets/buildFoot/buildFooter.dart';
 
 class SpeakingScreen extends StatelessWidget {
    SpeakingScreen({super.key});
@@ -25,7 +28,7 @@ class SpeakingScreen extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       backgroundColor:Color.fromARGB(255, 254, 250, 229) ,
-      bottomNavigationBar: BuildFotter(),
+      bottomNavigationBar: const CustomBottomNavigationBar(),
     );
   }
 }

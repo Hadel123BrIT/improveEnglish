@@ -8,6 +8,7 @@ class VocabularyController extends GetxController {
   FirebaseFirestore.instance.collection('Folders');
   final String defaultImage = 'assets/images/dictionary.png';
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final isLoading = false.obs;
 
   @override
   void onInit() {
@@ -22,7 +23,7 @@ class VocabularyController extends GetxController {
         Get.snackbar('Error', 'User not authenticated');
         return;
       }
-
+      isLoading(true);
       final snapshot = await foldersCollection
           .where('userId', isEqualTo: user.uid)
           .orderBy('created_at', descending: true)
@@ -38,6 +39,9 @@ class VocabularyController extends GetxController {
       }));
     } catch (e) {
       Get.snackbar('Error', 'Failed to load folders: ${e.toString()}');
+    }
+    finally {
+      isLoading(false);
     }
   }
 

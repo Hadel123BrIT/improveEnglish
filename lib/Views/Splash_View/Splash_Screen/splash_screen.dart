@@ -29,6 +29,8 @@ class _SplashScreenState extends State<SplashScreen> {
   bool onlastPage=false;
   @override
   Widget build(BuildContext context) {
+    @override
+
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: Colors.white,
@@ -48,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ],
           ),
           Container(
-            alignment: Alignment(0, 0.85),
+              alignment: Alignment(0, 0.85),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -76,8 +78,8 @@ class _SplashScreenState extends State<SplashScreen> {
                     onTap: (){
                       ( FirebaseAuth.instance.currentUser!=null &&
                           FirebaseAuth.instance.currentUser!.emailVerified)
-                          ?Get.to(HomepageScreen())
-                          :Get.to(LoginScreen());
+                          ?Get.to(()=>HomepageScreen())
+                          :Get.to(()=>LoginScreen());
 
                     },
                     child: Text("done",

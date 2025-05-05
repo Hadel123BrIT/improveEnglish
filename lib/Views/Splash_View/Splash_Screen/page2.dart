@@ -34,7 +34,6 @@ class Page2 extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              width: screenWidth * 0.85,
               child: Lottie.asset(
                 'assets/animations/page2.json',
                 fit: BoxFit.contain,

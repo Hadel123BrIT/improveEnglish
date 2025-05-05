@@ -1,7 +1,8 @@
-// views/my_profile.dart
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:app_with_firebase/Core/Constances/all_colors.dart';
 import '../MyProfile_Controller/myProfile_controller.dart';
 
 class MyProfileScreen extends StatelessWidget {
@@ -10,30 +11,29 @@ class MyProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: background,
       appBar: AppBar(
+        centerTitle: true,
         title: Text('My Profile', style: TextStyle(color: Colors.black)),
-        backgroundColor: Colors.white,
+        backgroundColor: background,
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Get.back(),
         ),
       ),
-      body: Obx(() {
-        return SingleChildScrollView(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            children: [
-              _buildProfileHeader(),
-              SizedBox(height: 30),
-              _buildProfileInfoCard(),
-              SizedBox(height: 20),
-              _buildSettingsOptions(),
-            ],
-          ),
-        );
-      }),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          children: [
+            _buildProfileHeader(),
+            SizedBox(height: 30),
+            _buildProfileInfoCard(),
+            SizedBox(height: 20),
+            _buildSettingsOptions(),
+          ],
+        ),
+      ),
     );
   }
 
@@ -43,39 +43,43 @@ class MyProfileScreen extends StatelessWidget {
         Stack(
           alignment: Alignment.bottomRight,
           children: [
-            CircleAvatar(
+            Obx(() => CircleAvatar(
               radius: 60,
               backgroundColor: Colors.grey[300],
-              backgroundImage: _profileController.profileImageUrl.isNotEmpty
-                  ? NetworkImage(_profileController.profileImageUrl.value)
+              backgroundImage: _profileController.imagePath.value.isNotEmpty
+                  ? FileImage(File(_profileController.imagePath.value))
                   : null,
-              child: _profileController.profileImageUrl.isEmpty
+              child: _profileController.imagePath.value.isEmpty
                   ? Icon(Icons.person, size: 60, color: Colors.grey[600])
                   : null,
-            ),
-            FloatingActionButton(
+            )),
+            Obx(() => FloatingActionButton(
               mini: true,
-              backgroundColor: Colors.blue,
-              child: Icon(Icons.camera_alt, color: Colors.white),
-              onPressed: _profileController.uploadProfileImage,
-            ),
+              backgroundColor: Colors.orangeAccent[100],
+              child: _profileController.isLoading.value
+                  ? CircularProgressIndicator(color: Colors.white)
+                  : Icon(Icons.camera_alt, color: Colors.white),
+              onPressed: _profileController.isLoading.value ? null : () {
+                _profileController.pickAndSaveImage();
+              },
+            )),
           ],
         ),
         SizedBox(height: 15),
-        Text(
+        Obx(() => Text(
           _profileController.name.value,
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-        ),
-        Text(
+        )),
+        Obx(() => Text(
           _profileController.email.value,
           style: TextStyle(color: Colors.grey[600]),
-        ),
+        )),
       ],
     );
   }
 
   Widget _buildProfileInfoCard() {
-    return Card(
+    return Obx(() => Card(
       elevation: 3,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
@@ -92,7 +96,7 @@ class MyProfileScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 
   Widget _buildInfoRow(IconData icon, String title, String value) {
@@ -100,7 +104,7 @@ class MyProfileScreen extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 10),
       child: Row(
         children: [
-          Icon(icon, color: Colors.blue),
+          Icon(icon, color: Colors.orangeAccent[100]),
           SizedBox(width: 15),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -135,7 +139,7 @@ class MyProfileScreen extends StatelessWidget {
 
   Widget _buildSettingsOption(IconData icon, String title, {bool isLogout = false}) {
     return ListTile(
-      leading: Icon(icon, color: isLogout ? Colors.red : Colors.blue),
+      leading: Icon(icon, color: isLogout ? Colors.red : Colors.orangeAccent[100]),
       title: Text(title, style: TextStyle(
         color: isLogout ? Colors.red : Colors.black,
       )),
@@ -143,7 +147,6 @@ class MyProfileScreen extends StatelessWidget {
           color: isLogout ? Colors.red : Colors.grey),
       onTap: () {
         if (isLogout) {
-          // Handle logout
           Get.defaultDialog(
             title: 'Logout',
             middleText: 'Are you sure you want to logout?',
@@ -151,7 +154,8 @@ class MyProfileScreen extends StatelessWidget {
             textCancel: 'No',
             confirmTextColor: Colors.white,
             onConfirm: () {
-              // Implement logout logic
+              // يمكنك إضافة مسح بيانات الصورة هنا إذا أردت
+              // _profileController.removeImage();
               Get.back();
             },
           );

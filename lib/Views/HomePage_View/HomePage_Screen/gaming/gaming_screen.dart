@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../Widgets/CustomAppbar.dart';
-import '../../../../Widgets/buildFooter.dart';
+import '../../../../Widgets/buildFoot/buildFoot_Controller.dart';
+import '../../../../Widgets/buildFoot/buildFooter.dart';
 
 class GamingScreen extends StatelessWidget {
    GamingScreen({super.key});
@@ -15,7 +16,6 @@ class GamingScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppbar(ScaffoldKey: ScaffoldKey,keytool: 90, title: '', text: "Let's game together", isappear: false,),
       backgroundColor:Color.fromARGB(255, 254, 250, 229) ,
-      bottomNavigationBar: BuildFotter(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.grey[300],
         child: Container(
@@ -29,6 +29,8 @@ class GamingScreen extends StatelessWidget {
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: const CustomBottomNavigationBar(),
+
     );
   }
 }

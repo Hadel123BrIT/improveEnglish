@@ -40,7 +40,6 @@ class Page1 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: screenWidth * 0.8,
               child: Lottie.asset(
                 'assets/animations/page1.json',
                 fit: BoxFit.contain,

@@ -33,8 +33,6 @@ class Page3 extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             SizedBox(
-              width: screenWidth * 0.9,
-              height: screenWidth * 0.8,
               child: Lottie.asset(
                 'assets/animations/page3.json',
                 fit: BoxFit.contain,

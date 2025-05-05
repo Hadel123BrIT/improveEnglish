@@ -7,9 +7,9 @@ import '../Views/HomePage_View/HomePage_Controller/vocabulary_controller/vocabul
 
 class AddVocabularySheet {
   final TextEditingController nameController = TextEditingController();
-  final VocabularyController controller = Get.find<VocabularyController>();
+  final VocabularyController controller = Get.put(VocabularyController());
 
-  void show(BuildContext context) {
+  show(BuildContext context) {
     showModalBottomSheet(
       context: context,
       builder: (context) {

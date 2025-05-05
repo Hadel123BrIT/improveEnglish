@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../../Widgets/buildFooter.dart';
+import '../../../../Widgets/buildFoot/buildFoot_Controller.dart';
+import '../../../../Widgets/buildFoot/buildFooter.dart';
 import '../../../../Widgets/getSearch.dart';
 import '../../HomePage_Controller/vocabulary_controller/vocabulary_controller.dart';
 import '../../HomePage_Controller/vocabulary_controller/vocabulary_detail_controller.dart';
@@ -36,13 +37,13 @@ class VocabularyDetails extends StatelessWidget {
         backgroundColor: background,
         title: Obx(() => Text(controller.folderName.value)),
       ),
-      bottomNavigationBar: BuildFotter(),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.grey[300],
-        child: Icon(Icons.add_box_outlined, color: Colors.black),
-        onPressed: () => _showAddWordDialog(context),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+      // floatingActionButton: FloatingActionButton(
+      //   backgroundColor: Colors.grey[300],
+      //   child: Icon(Icons.add_box_outlined, color: Colors.black),
+      //   onPressed: () => _showAddWordDialog(context),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Column(
         children: [
           Getsearch(),

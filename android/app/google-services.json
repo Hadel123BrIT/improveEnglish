@@ -12,7 +12,20 @@
           "package_name": "com.example.app_with_firebase"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1071539468904-u5hqp1l8ovcpnvji69m5b9ppea0tb80q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app_with_firebase",
+            "certificate_hash": "0ea64284b70d55826c42b3390b8daa72439e9bd3"
+          }
+        },
+        {
+          "client_id": "1071539468904-5q00i26ajclmvv6b1r833vs9trvkseeu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCz8cE34OBMGUGOjY986vEbrQ7jsJJA-gM"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071539468904-5q00i26ajclmvv6b1r833vs9trvkseeu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1071539468904-hg1i466a224febshh8cdjao18ohp5c3a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.appWithFirebase"
+              }
+            }
+          ]
         }
       }
     },
@@ -31,7 +56,12 @@
           "package_name": "com.example.coffeein"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1071539468904-5q00i26ajclmvv6b1r833vs9trvkseeu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCz8cE34OBMGUGOjY986vEbrQ7jsJJA-gM"
@@ -39,7 +69,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071539468904-5q00i26ajclmvv6b1r833vs9trvkseeu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1071539468904-hg1i466a224febshh8cdjao18ohp5c3a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.appWithFirebase"
+              }
+            }
+          ]
         }
       }
     }
